@@ -3,9 +3,12 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     try (Scanner scanner = new Scanner(System.in)) {
-      String input = scanner.nextLine();
-    } catch (Exception e) {
-      System.out.println("Input error");
+      int num = Integer.parseInt(scanner.nextLine().trim());
+      System.out.println(toRoman(num));
+    } catch (NumberFormatException e) {
+      System.out.println("Input error: not a valid integer");
+    } catch (IllegalArgumentException e) {
+      System.out.println(e.getMessage());
     }
   }
 
